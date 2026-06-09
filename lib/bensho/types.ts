@@ -20,6 +20,7 @@ export type Question = {
   layer: BenshoLayer
   category: string       // 例：「寒熱」「表裏」「臓腑」
   text: string           // 質問文
+  voiceText?: string     // 音声読み上げ用テキスト
   choices?: Choice[]     // 選択肢（nullなら自由入力）
   allowFreeInput?: boolean // 自由入力も許可
   why: string            // なぜこの質問をするか（学習モード）
