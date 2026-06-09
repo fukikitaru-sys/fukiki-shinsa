@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>初診登録用紙 - 伊関鍼灸院・接骨院</title>
+  <style>
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      .no-print { display: none !important; }
+      body { font-size: 10pt; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'MS Mincho', 'Yu Mincho', 'Hiragino Mincho Pro', serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .no-print {
+      background: #c8860a;
+      color: white;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .no-print button {
+      background: white;
+      color: #c8860a;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .paper {
+      background: white;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 24px 28px;
+      min-height: 270mm;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .title-area {
+      text-align: center;
+      margin-bottom: 16px;
+      border-bottom: 3px double #333;
+      padding-bottom: 10px;
+    }
+    .title-area h1 {
+      font-size: 22pt;
+      font-weight: bold;
+      letter-spacing: 0.5em;
+    }
+    .subtitle {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 9pt;
+      margin-top: 4px;
+      gap: 16px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    td, th {
+      border: 1px solid #444;
+      padding: 5px 8px;
+      vertical-align: middle;
+    }
+    .label {
+      background: #f0f0f0;
+      font-weight: bold;
+      font-size: 9.5pt;
+      white-space: nowrap;
+      width: 70px;
+      text-align: center;
+    }
+    .writeline {
+      border-bottom: 1px solid #555;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 10pt;
+      border-left: 4px solid #c8860a;
+      padding-left: 6px;
+      margin: 12px 0 6px;
+    }
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px 8px;
+      padding: 4px 0;
+      font-size: 9.5pt;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .box {
+      width: 14px;
+      height: 14px;
+      border: 1px solid #555;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .tall-td {
+      height: 50px;
+    }
+    .consent-box {
+      border: 1px solid #666;
+      padding: 10px 14px;
+      margin-top: 14px;
+      font-size: 9pt;
+    }
+    .footer {
+      text-align: center;
+      font-size: 8.5pt;
+      color: #666;
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid #ccc;
+    }
+    .small { font-size: 8.5pt; color: #555; }
+    .circle { display: inline-block; margin: 0 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- 印刷ボタン -->
+  <div class="no-print">
+    <button onclick="window.print()">🖨️ 印刷する（A4）</button>
+    <span style="font-size:13px;">印刷設定で「用紙サイズ：A4」「余白：なし」を選んでください</span>
+  </div>
+
+  <div class="paper">
+
+    <!-- タイトル -->
+    <div class="title-area">
+      <h1>鍼　灸　カ　ル　テ</h1>
+      <div class="subtitle">
+        <span>自費 ・ 保険 ・ 鍼柔</span>
+      </div>
+    </div>
+
+    <!-- カルテNo・初診日 -->
+    <table>
+      <tr>
+        <td class="label">カルテ No.</td>
+        <td style="width:180px;"></td>
+        <td class="label">初　診　日</td>
+        <td>
+          <span class="small">令和</span>
+          <span class="writeline" style="width:30px;"></span>年
+          <span class="writeline" style="width:20px;"></span>月
+          <span class="writeline" style="width:20px;"></span>日
+        </td>
+      </tr>
+    </table>
+
+    <!-- 氏名 -->
+    <table>
+      <tr>
+        <td class="label" rowspan="2" style="width:70px;">氏&nbsp;&nbsp;&nbsp;名</td>
+        <td style="font-size:8pt;color:#888;border-bottom:none;padding-bottom:2px;">フリガナ</td>
+      </tr>
+      <tr>
+        <td style="height:28px;font-size:13pt;"></td>
+      </tr>
+    </table>
+
+    <!-- 生年月日・性別 -->
+    <table>
+      <tr>
+        <td class="label" style="width:70px;">生年月日<br>年　齢</td>
+        <td>
+          西暦・大正・昭和・平成・令和
+          <span class="writeline" style="width:32px;"></span>年
+          <span class="writeline" style="width:22px;"></span>月
+          <span class="writeline" style="width:22px;"></span>日
+          （　　　歳）
+        </td>
+        <td class="label" style="width:50px;">性　別</td>
+        <td style="width:80px;">男　・　女</td>
+      </tr>
+    </table>
+
+    <!-- 住所 -->
+    <table>
+      <tr>
+        <td class="label" rowspan="2">住&nbsp;&nbsp;&nbsp;所</td>
+        <td>
+          〒<span class="writeline" style="width:50px;"></span>ー<span class="writeline" style="width:60px;"></span>
+        </td>
+        <td class="label" style="width:70px;">自宅 ☎</td>
+        <td style="width:160px;"><span class="writeline" style="width:140px;"></span></td>
+      </tr>
+      <tr>
+        <td style="padding-top:4px;padding-bottom:6px;">
+          <span class="writeline" style="width:360px;"></span>
+        </td>
+        <td class="label">携帯 ☎</td>
+        <td><span class="writeline" style="width:140px;"></span></td>
+      </tr>
+    </table>
+
+    <!-- 緊急連絡先 -->
+    <table>
+      <tr>
+        <td class="label" rowspan="2">緊急<br>連絡先</td>
+        <td class="label" style="width:50px;font-weight:normal;font-size:8.5pt;">氏　名</td>
+        <td style="width:160px;"><span class="writeline" style="width:140px;"></span></td>
+        <td class="label" style="width:70px;">自宅 ☎</td>
+        <td style="width:160px;"><span class="writeline" style="width:140px;"></span></td>
+      </tr>
+      <tr>
+        <td class="label" style="font-weight:normal;font-size:8.5pt;">続　柄</td>
+        <td>（　　　　　）</td>
+        <td class="label">携帯 ☎</td>
+        <td><span class="writeline" style="width:140px;"></span></td>
+      </tr>
+    </table>
+
+    <!-- 交通手段 -->
+    <table>
+      <tr>
+        <td class="label">交通手段</td>
+        <td>
+          <div>当院までの所要時間：<span class="writeline" style="width:40px;"></span>分</div>
+          <div style="margin-top:4px;">徒歩　・　自転車　・　自家用車　・　バス　・　その他（　　　　　　　　）</div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- 保険証 -->
+    <table>
+      <tr>
+        <td class="label" rowspan="2">保険証</td>
+        <td class="label" style="font-weight:normal;font-size:8.5pt;width:60px;">保険者名称</td>
+        <td style="width:180px;"><span class="writeline" style="width:160px;"></span></td>
+        <td class="label" style="width:60px;font-weight:normal;font-size:8.5pt;">保険者番号</td>
+        <td style="width:120px;"><span class="writeline" style="width:100px;"></span></td>
+      </tr>
+      <tr>
+        <td class="label" style="font-weight:normal;font-size:8.5pt;">記　号</td>
+        <td><span class="writeline" style="width:160px;"></span></td>
+        <td class="label" style="font-weight:normal;font-size:8.5pt;">番　号</td>
+        <td><span class="writeline" style="width:100px;"></span></td>
+      </tr>
+    </table>
+
+    <!-- 主訴 -->
+    <table>
+      <tr>
+        <td class="label">主訴・<br>来院目的</td>
+        <td class="tall-td" style="height:60px;"></td>
+      </tr>
+    </table>
+
+    <!-- 現在の症状・既往歴 -->
+    <table>
+      <tr>
+        <td class="label">現在の<br>症状</td>
+        <td>
+          <div class="checkbox-grid">
+            <div class="checkbox-item"><span class="box"></span>高血圧</div>
+            <div class="checkbox-item"><span class="box"></span>低血圧</div>
+            <div class="checkbox-item"><span class="box"></span>糖尿病</div>
+            <div class="checkbox-item"><span class="box"></span>心臓病</div>
+            <div class="checkbox-item"><span class="box"></span>肝臓病</div>
+            <div class="checkbox-item"><span class="box"></span>腎臓病</div>
+            <div class="checkbox-item"><span class="box"></span>骨粗鬆症</div>
+            <div class="checkbox-item"><span class="box"></span>アレルギー</div>
+            <div class="checkbox-item"><span class="box"></span>ペースメーカー</div>
+            <div class="checkbox-item"><span class="box"></span>妊娠中</div>
+            <div class="checkbox-item"><span class="box"></span>その他</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- 服薬 -->
+    <table>
+      <tr>
+        <td class="label">服薬中<br>のお薬</td>
+        <td style="height:36px;"><span class="writeline" style="width:98%;"></span></td>
+      </tr>
+    </table>
+
+    <!-- 備考 -->
+    <table>
+      <tr>
+        <td class="label">備　考</td>
+        <td style="height:56px;"></td>
+      </tr>
+    </table>
+
+    <!-- 同意書 -->
+    <div class="consent-box">
+      <p style="font-weight:bold;margin-bottom:6px;">【個人情報の取り扱いについて】</p>
+      <p style="line-height:1.7;">
+        ご記入いただいた個人情報は、診療・施術の目的にのみ使用し、第三者への提供は法令に基づく場合を除き行いません。
+        また、AI診察サポートシステムによる分析にも使用することがあります。
+        同意いただける場合は、下記にご署名ください。
+      </p>
+      <div style="display:flex;justify-content:flex-end;align-items:flex-end;margin-top:10px;gap:16px;">
+        <span>令和　　年　　月　　日</span>
+        <span>署名：<span class="writeline" style="width:180px;"></span></span>
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <div class="footer">
+      伊関鍼灸院・接骨院　〒738-XXXX　広島県廿日市市地御前1-24-21　TEL: 0829-XX-XXXX
+    </div>
+
+  </div>
+</body>
+</html>
